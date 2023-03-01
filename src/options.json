@@ -1,0 +1,12 @@
+{
+  "title": "Node Loader options",
+  "type": "object",
+  "properties": {
+    "flags": {
+      "type": "integer",
+      "description": "An integer value that allows to specify dlopen behavior.",
+      "link": "https://github.com/webpack-contrib/node-loader#flags"
+    }
+  },
+  "additionalProperties": false
+}
