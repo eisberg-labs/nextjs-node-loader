@@ -20,17 +20,21 @@ module.exports = {
   webpack: (config, { dev, isServer, webpack, nextRuntime }) => {
     config.module.rules.push({
       test: /\.node$/,
-      use: [{
-        loader: "nextjs-node-loader",
-      }],
+      use: [
+        {
+          loader: "nextjs-node-loader",
+        },
+      ],
     });
     return config;
   },
 };
 ```
+
 And use in e.g. your api route;
+
 ```javascript
-import module from 'node-module';
+import module from "node-module";
 
 export default function handler(req, res) {
   // ...
@@ -39,9 +43,9 @@ export default function handler(req, res) {
 
 ## Options
 
-|         Name          |         Type         |         Default         | Description                                                  |
-| :-------------------: | :------------------: | :---------------------: | :----------------------------------------------------------- |
-| **[`flags`](#flags)** |      `{Number}`      |       `undefined`       | Enables/Disables `url`/`image-set` functions handling        |
+|         Name          |    Type    |   Default   | Description                                           |
+| :-------------------: | :--------: | :---------: | :---------------------------------------------------- |
+| **[`flags`](#flags)** | `{Number}` | `undefined` | Enables/Disables `url`/`image-set` functions handling |
 
 ### `flags`
 

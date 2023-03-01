@@ -23,7 +23,6 @@
     "security": "npm audit --production",
     "lint:prettier": "prettier --list-different .",
     "lint:js": "eslint --cache .",
-    "lint:spelling": "cspell \"**/*.*\"",
     "lint": "npm-run-all -l -p \"lint:**\"",
     "pretest:only": "cd test/fixtures/example && npm i",
     "test:only": "cross-env NODE_ENV=test jest",
@@ -52,7 +51,6 @@
     "@webpack-contrib/eslint-config-webpack": "^3.0.0",
     "babel-jest": "^27.5.1",
     "cross-env": "^7.0.3",
-    "cspell": "^6.20.1",
     "del": "^6.1.1",
     "del-cli": "^3.0.1",
     "eslint": "^7.32.0",
@@ -68,6 +66,11 @@
     "webpack": "^5.75.0"
   },
   "keywords": [
-    "webpack", "nextjs", "loader", "node.js", "node-loader", "native-modules"
+    "webpack",
+    "nextjs",
+    "loader",
+    "node.js",
+    "node-loader",
+    "native-modules"
   ]
 }
