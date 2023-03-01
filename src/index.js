@@ -2,7 +2,7 @@ const { interpolateName } = require("loader-utils");
 
 const schema = require("./options.json");
 
-function loader(content) {
+export default function loader(content) {
   const { rootContext, _compiler, getOptions, emitFile } = this;
   const options = getOptions(schema);
   const { flags } = options;
@@ -28,5 +28,4 @@ try {
 `;
 }
 
-module.exports = loader;
-module.exports.raw = true;
+export const raw = true;
