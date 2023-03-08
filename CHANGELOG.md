@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.4](https://github.com/eisberg-labs/nextjs-node-loader/compare/v1.1.3...v1.1.4) (2023-03-08)
+
+
+### Bug Fixes
+
+* wrong order of outputPath cond ([07e34eb](https://github.com/eisberg-labs/nextjs-node-loader/commit/07e34ebe76604223ee032b8c98491a01f87aa49e))
+
 ### [1.1.3](https://github.com/eisberg-labs/nextjs-node-loader/compare/v1.1.2...v1.1.3) (2023-03-08)
 
 
