@@ -4,6 +4,7 @@ This is a custom loader for Webpack that allows you to include native Node.js `.
 It simplifies the process of loading native modules by providing a standardized interface that works seamlessly with
 Next.js.
 This is a modified version of [Node loader](https://github.com/webpack-contrib/node-loader).
+More context on the [why and example use of the loader in my blog post](https://www.amarjanica.com/nextjs-and-rust-creating-a-custom-webpack-loader-for-native-node-modules).
 
 ## Getting Started
 
