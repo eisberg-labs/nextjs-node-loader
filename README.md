@@ -7,7 +7,7 @@ This is a modified version of [Node loader](https://github.com/webpack-contrib/n
 
 ## Getting Started
 
-To begin, you'll need to install `nextjs-node-loader`:
+To begin, you'll need to install a `nextjs-node-loader`:
 
 ```console
 npm install nextjs-node-loader --save-dev
@@ -23,6 +23,10 @@ module.exports = {
       use: [
         {
           loader: "nextjs-node-loader",
+          options: {
+            flags: os.constants.dlopen.RTLD_NOW,
+            outputPath: config.output.path
+          }
         },
       ],
     });
@@ -43,24 +47,10 @@ export default function handler(req, res) {
 
 ## Options
 
-|         Name          |    Type    |   Default   | Description                                           |
-| :-------------------: | :--------: | :---------: | :---------------------------------------------------- |
-| **[`flags`](#flags)** | `{Number}` | `undefined` | Enables/Disables `url`/`image-set` functions handling |
-
-### `flags`
-
-Type: `Number`
-Default: `undefined`
-
-The `flags` argument is an integer that allows to specify dlopen behavior.
-See the [`process.dlopen`](https://nodejs.org/api/process.html#process_process_dlopen_module_filename_flags)
-documentation for details.
-
-## Contributing
-
-Please take a moment to read our contributing guidelines if you haven't yet done so.
-
-[CONTRIBUTING](./.github/CONTRIBUTING.md)
+|    Name    |    Type    |       Default        | Description                                           |
+|:----------:|:----------:|:--------------------:| :---------------------------------------------------- |
+|   flags    | `{Number}` |     `undefined`      | Enables/Disables `url`/`image-set` functions handling |
+| outputPath | `{String}` | webpack's outputPath | The root path of shared node libraries |
 
 ## License
 

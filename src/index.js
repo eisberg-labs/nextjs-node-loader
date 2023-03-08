@@ -5,8 +5,7 @@ const schema = require("./options.json");
 export default function loader(content) {
   const { rootContext, _compiler, getOptions, emitFile } = this;
   const options = getOptions(schema);
-  const { flags } = options;
-  const outputPath = _compiler.options.output.path;
+  const { flags, outputPath } = options;
 
   const name = interpolateName(this, "[name].[ext]", {
     context: rootContext,
@@ -18,7 +17,7 @@ export default function loader(content) {
   return `
 try {
   process.dlopen(module, ${JSON.stringify(
-    outputPath
+    typeof outputPath !== "undefined" ?  _compiler.options.output.path : outputPath,
   )} + require("path").sep + __webpack_public_path__ + ${JSON.stringify(name)}${
     typeof flags !== "undefined" ? `, ${JSON.stringify(options.flags)}` : ""
   });

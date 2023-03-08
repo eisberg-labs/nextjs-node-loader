@@ -1,11 +1,14 @@
 {
-  "title": "Node Loader options",
+  "title": "Nextjs Node Loader options",
   "type": "object",
   "properties": {
     "flags": {
       "type": "integer",
-      "description": "An integer value that allows to specify dlopen behavior.",
-      "link": "https://github.com/webpack-contrib/node-loader#flags"
+      "description": "An integer value that allows to specify dlopen behavior."
+    },
+    "outputPath": {
+      "type": "string",
+      "description": "The root path of shared node libraries"
     }
   },
   "additionalProperties": false
