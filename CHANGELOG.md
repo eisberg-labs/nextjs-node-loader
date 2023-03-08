@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.3](https://github.com/eisberg-labs/nextjs-node-loader/compare/v1.1.2...v1.1.3) (2023-03-08)
+
+
+### Bug Fixes
+
+* fixes a unportable root path for native node modules ([dcb44c2](https://github.com/eisberg-labs/nextjs-node-loader/commit/dcb44c2b29179dfbe38c12ce5cecbd343bfc6cc6))
+
 ### [1.1.2](https://github.com/eisberg-labs/nextjs-node-loader/compare/v1.1.1...v1.1.2) (2023-03-01)
 
 
