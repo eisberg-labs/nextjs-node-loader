@@ -52,6 +52,7 @@ export default function handler(req, res) {
 |:----------:|:----------:|:--------------------:| :---------------------------------------------------- |
 |   flags    | `{Number}` |     `undefined`      | Enables/Disables `url`/`image-set` functions handling |
 | outputPath | `{String}` | webpack's outputPath | The root path of shared node libraries |
+| includeWebpackPublicPath | `{String}`| false | If __webpack_public_path__ should be included in a path for loading node module. For nextjs >13.2.5 should be false. |
 
 ## License
 
