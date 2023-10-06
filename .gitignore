@@ -6,7 +6,7 @@ npm-debug.log*
 /dist
 /local
 /reports
-/node_modules
+node_modules
 .DS_Store
 Thumbs.db
 .idea
@@ -16,4 +16,4 @@ Thumbs.db
 *.iml
 test/fixtures/example/build
 test/fixtures/example/node_modules
-
+.next

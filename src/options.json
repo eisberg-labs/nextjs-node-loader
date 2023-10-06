@@ -9,6 +9,10 @@
     "outputPath": {
       "type": "string",
       "description": "The root path of shared node libraries"
+    },
+    "includeWebpackPublicPath": {
+      "type": "boolean",
+      "description": "If __webpack_public_path__ should be included."
     }
   },
   "additionalProperties": false
