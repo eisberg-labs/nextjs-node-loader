@@ -1,6 +1,6 @@
 {
   "name": "nextjs-node-loader",
-  "version": "1.1.5-alpha.0",
+  "version": "1.1.5",
   "description": "Allows you to include native Node.js `.node` modules in your Next.js project",
   "license": "MIT",
   "repository": {

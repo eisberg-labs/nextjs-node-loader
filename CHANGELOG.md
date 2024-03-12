@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.5](https://github.com/eisberg-labs/nextjs-node-loader/compare/v1.1.5-alpha.0...v1.1.5) (2024-03-12)
+
 ### [1.1.5-alpha.0](https://github.com/eisberg-labs/nextjs-node-loader/compare/v1.1.4...v1.1.5-alpha.0) (2023-10-06)
 
 ### [1.1.4](https://github.com/eisberg-labs/nextjs-node-loader/compare/v1.1.3...v1.1.4) (2023-03-08)
