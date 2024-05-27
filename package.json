@@ -48,7 +48,7 @@
     "@webpack-contrib/eslint-config-webpack": "^3.0.0",
     "babel-jest": "^29.0.0",
     "cross-env": "^7.0.3",
-    "del": "^6.1.1",
+    "del": "^7.0.0",
     "del-cli": "^5.0.0",
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
