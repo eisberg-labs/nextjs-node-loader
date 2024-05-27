@@ -55,7 +55,7 @@ jobs:
         run: npm run security
 
       - name: Check commit message
-        uses: wagoid/commitlint-github-action@v5
+        uses: wagoid/commitlint-github-action@v6
 
   test:
     name: Test - ${{ matrix.os }} - Node v${{ matrix.node-version }}, Webpack ${{ matrix.webpack-version }}
