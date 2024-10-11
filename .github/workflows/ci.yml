@@ -1,0 +1,33 @@
+name: Continuous Integration
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    name: Test and build loader
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run security
+      - name: Build loader
+        run: npm run build
+      - name: Start Xvfb
+        run: |
+          Xvfb :99 -screen 0 1024x768x24 &
+          export DISPLAY=:99
+      - name: Test
+        env:
+          DISPLAY: :99
+        run: |
+          sudo apt update && sudo apt install -y libxtst-dev libpng-dev
+          npm test
