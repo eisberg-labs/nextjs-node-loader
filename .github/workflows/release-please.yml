@@ -41,7 +41,13 @@ jobs:
           node-version: 20
           cache: "npm"
       - run: npm ci
+      - name: Start Xvfb
+        run: |
+          Xvfb :99 -screen 0 1024x768x24 &
+          export DISPLAY=:99
       - name: Test
+        env:
+          DISPLAY: :99
         run: |
           sudo apt update && sudo apt install -y libxtst-dev libpng-dev
           npm test
