@@ -1,21 +1,16 @@
-import os from 'os';
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.node$/,
-      use: [
-        {
-          loader: 'nextjs-node-loader',
-          options: {
-            flags: os.constants.dlopen.RTLD_NOW,
-            outputPath: config.output.path
-          },
-        },
-      ],
-    });
-
+  experimental: {
+    serverComponentsExternalPackages: ['msnodesqlv8','robotjs', 'node-el-slugify'],
+  },
+  /** @type {import('webpack').Configuration} */
+  webpack: (config, context) => {
+    if (context.isServer) {
+      config.externals = [
+        ...config.externals,
+        {'node-el-slugify': 'commonjs node-el-slugify'},
+      ]
+    }
     return config;
   },
 };

@@ -14,18 +14,14 @@ export default function loader(content) {
   });
 
   emitFile(name, content);
-
-  return `
-try {
-  process.dlopen(module, ${JSON.stringify(
-    outputPath || _compiler.options.output.path
-  )} + require("path").sep + ${isWebpackPathIncluded ? '__webpack_public_path__' : '""'} + ${JSON.stringify(name)}${
-    typeof flags !== 'undefined' ? `, ${JSON.stringify(options.flags)}` : ''
-  });
-} catch (error) {
-  throw new Error('nextjs-node-loader:\\n' + error);
-}
-`;
+  const targetOutputPath = outputPath || _compiler.options.output.path;
+  const webpackPublicPath = isWebpackPathIncluded ? '__webpack_public_path__' : '""';
+  const cleanedTargetOutputPath = targetOutputPath.replace(/\\/g, '/');
+  const moduleFlags = typeof flags !== 'undefined' ? `, ${options.flags}` : '';
+  const loaderScript = `
+  process.dlopen(module, require('path').join("${cleanedTargetOutputPath}", ${webpackPublicPath}, "${name}")${moduleFlags});`;
+  // console.log(loaderScript);
+  return loaderScript;
 }
 
 export const raw = true;

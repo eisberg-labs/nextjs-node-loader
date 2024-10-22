@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.2.11",
+    "msnodesqlv8": "^4.2.1",
+    "next": "=14.2.15",
+    "nextjs-node-loader": "file:../..",
     "node-el-slugify": "^0.1.4-beta.4",
     "react": "^18",
     "react-dom": "^18",
@@ -21,7 +23,6 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.15",
-    "nextjs-node-loader": "file:../..",
     "typescript": "^5"
   }
 }
