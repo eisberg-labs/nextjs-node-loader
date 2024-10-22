@@ -1,3 +1,39 @@
+# nextjs-node-loader (No Longer Maintained)
+
+**Status: Deprecated**
+
+There's no need for it anymore. I've added an example in [next 14](./examples/next-14) to demo including different native modules.
+Solution in NextJS 14 is to add a:
+```javascript
+experimental: {
+  serverComponentsExternalPackages: ['yournativemodule'],
+}
+```
+For a dependency built with neon bindings, you might also need to configure `externals`:
+```javascript
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    serverComponentsExternalPackages: ['mynativemodule'],
+  },
+  /** @type {import('webpack').Configuration} */
+  webpack: (config, context) => {
+    if (context.isServer) {
+      config.externals = [
+        ...config.externals,
+        {'mynativemodule': 'commonjs mynativemodule'},
+      ]
+    }
+    return config;
+  },
+};
+```
+
+A huge thank you to everyone who contributed to this project! ❤️
+
+For historical purposes, the original README is preserved below.
+
+
 # nextjs-node-loader
 
 This is a custom loader for Webpack that allows you to include native Node.js `.node` modules in your Next.js project.

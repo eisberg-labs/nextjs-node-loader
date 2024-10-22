@@ -6,6 +6,5 @@ export async function GET(
   { params }: { params: { slug: string } }
 ) {
   const slug = slugifier.slugify(params.slug);
-
   return Response.json({message: slug});
 }
